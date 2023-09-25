@@ -7,7 +7,7 @@ import java.nio.file.Path;
 public class Main {
     public static void main(String[] args) throws IOException {
 
-        //print(new File("."), "", true);
+        print(new File("."), "", true);
         backup(".", "../backup");
     }
 
@@ -45,7 +45,7 @@ public class Main {
         File[] files = dirFrom.listFiles();
         for (File file: files) {
             if(file.isDirectory()){
-                backup(String.format("%s/%s",dir,file.getName()),String.format("%s/%s",target,file.getName()));
+                    backup(String.format("%s/%s", dir, file.getName()), String.format("%s/%s", target, file.getName()));
             } else {
                 Files.copy(Path.of(file.getCanonicalPath()),Path.of(target,file.getName()));
             }
